@@ -56,18 +56,18 @@ while s ~= 1
     o = observation();% in simulation use this
     % use this in real world
     %o = getobs();
-    
+
     pos_stat = [pos_stat; [pos_x pos_y theta]];
-    
+
 
     [action total_p max_p_action] = NSMSelectAction(LTM, episode, o);%use this for learning
 %    action = NSMrndAction();%use this for no learning i.e.,for only random actions
 
     [st1 st2 rt1 rt2 b] = NSMAction(action);% in simulation use this
-  
+
     t_stat_action = [t_stat_action; [st1 st2 rt1 rt2]];
     blocked = [blocked; b];
-   
+
     pos_stat = [pos_stat; [pos_x pos_y theta]];% in simulation use this
     %sim time
     time=rostime('now');
@@ -77,11 +77,11 @@ while s ~= 1
     formatIn = 'HH:MM:SS.FFF';
     DateVector = datevec(t,formatIn);
     rt2_ep=DateVector(1,6) + DateVector(1,5)*60 + DateVector(1,4)*3600;
-        
-        s = rndStartState1();% in simulation use this
-    end
+
+    s = rndStartState1();% in simulation use this
+
     episode = [episode; [o action 10 total_p max_p_action]];
-    
+
 end
 [steps_numof, ~] = size(episode);
 actual_episode=episode;
