@@ -1,5 +1,5 @@
 # Explicit Sequence Proximity Models for Hidden State Identification
-This repository provides code base for the paper "Explicit Sequence Proximity Models for Hidden State Identification".
+This repository provides official code base for the paper "Explicit Sequence Proximity Models for Hidden State Identification".
 
 ## Recommended Systems
 * Ubuntu 16.04
