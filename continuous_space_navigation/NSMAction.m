@@ -2,7 +2,7 @@
 % sharathraparthy@gmail.com	anilkota1997@gmail.com
 % In this program the robot communicates with the help of ROS. The robot will take actions according to the input given.
 % robot publishes a topic called "/epuck2/cmd_vel". 
-function [st1 st2 rt1 rt2 b] = NSMAction(action)
+function [st1 st2 rt1 rt2 b] = NSMAction(robot, action)
  
 global v
 global w
@@ -18,7 +18,7 @@ rt1=0;
 rt2=0;
 b=0;
 
-robot = rospublisher('/epuck2/cmd_vel');
+% robot = rospublisher('/epuck2/cmd_vel');
 vel = rosmessage(robot);
 
 

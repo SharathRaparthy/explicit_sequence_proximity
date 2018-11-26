@@ -2,7 +2,7 @@
 
 %Note: Comment the startState1() checking if statement according to the
 %      world used
-function [steps_numof episode actual_episode pos_stat t_stat_action t_stat_episode blocked] = NSMEpisode(LTM)
+function [steps_numof episode actual_episode pos_stat t_stat_action t_stat_episode blocked] = NSMEpisode(gazebo, robot, LTM)
 
 global pos_x
 global pos_y
@@ -63,7 +63,7 @@ while s ~= 1
     [action total_p max_p_action] = NSMSelectAction(LTM, episode, o);%use this for learning
 %    action = NSMrndAction();%use this for no learning i.e.,for only random actions
 
-    [st1 st2 rt1 rt2 b] = NSMAction(action);% in simulation use this
+    [st1 st2 rt1 rt2 b] = NSMAction(robot, action);% in simulation use this
 
     t_stat_action = [t_stat_action; [st1 st2 rt1 rt2]];
     blocked = [blocked; b];
@@ -78,7 +78,7 @@ while s ~= 1
     DateVector = datevec(t,formatIn);
     rt2_ep=DateVector(1,6) + DateVector(1,5)*60 + DateVector(1,4)*3600;
 
-    s = rndStartState1();% in simulation use this
+    s = rndStartState1(gazebo);% in simulation use this
 
     episode = [episode; [o action 10 total_p max_p_action]];
 

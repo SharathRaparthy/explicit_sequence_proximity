@@ -1,4 +1,4 @@
-function s = rndStartState1()
+function s = rndStartState1(gazebo)
 
 global pos_x
 global pos_y
@@ -16,7 +16,7 @@ while (((random_x^2)+(random_y^2))<((0.075)^2))
          
 end
 if s==1
-      gazebo = ExampleHelperGazeboCommunicator();
+%      gazebo = ExampleHelperGazeboCommunicator();
      models = getSpawnedModels(gazebo);
      epuck = ExampleHelperGazeboSpawnedModel('epuck2',gazebo);
      setState(epuck,'position',[random_x random_y pos_z],'orientation',[0 0 random_angle]);

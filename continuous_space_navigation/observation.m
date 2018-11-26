@@ -13,7 +13,7 @@ centre_right_obstacle = (v>0.075 & x<0.075 & z<0.075);
 centre_obstacle = (v>0.075 & x<0.075 & z>0.075);
 right_obstacle = (v>0.075 & x>0.075 & z<0.075);
 no_obstacle = (v>0.075 & x>0.075 & z>0.075);
-
+o = 0;
 if left_centre_right_obstacle == 1
     o=1;
 
