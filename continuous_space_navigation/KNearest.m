@@ -8,7 +8,7 @@ function [nearest_steps total_p] = KNearest(LTM, STM, o)
     total_p=0;
     for eidx = 1:ltm_episodes_numof
         for sidx = 1:ltm_steps_numof
-            [p step] = discounted_proximity(LTM, eidx, sidx, STM, o);
+            [p step] = mccallum_proximity(LTM, eidx, sidx, STM, o);
             if p>0
                 [nearest_steps_numof, ~] = size(nearest_steps);
                 if nearest_steps_numof < K

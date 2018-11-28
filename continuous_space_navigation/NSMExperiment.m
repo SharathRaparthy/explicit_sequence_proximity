@@ -19,6 +19,8 @@ s=rndStartState1(gazebo);
 pause(1);
 
 for i=1:no_of_trials
+    disp('Trial');
+    disp(i);
 %     [episode_steps, LTM, performance] = NSMTrial(no_of_episodes)
     [LTM, LTM_all_ep, actual_LTM, forward_blocked, episode_steps, position_stat, time_stat_action, time_stat_episode] = NSMTrial(gazebo, robot, no_of_episodes);
     filename=['results_LTM' num2str(i) '.mat'];
