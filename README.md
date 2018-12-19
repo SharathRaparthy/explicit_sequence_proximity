@@ -1,5 +1,5 @@
 # Explicit Sequence Proximity Models for Hidden State Identification
-This repository provides official code base for our [https://nips.cc/](NeurIPS) paper "[https://www.ias.informatik.tu-darmstadt.de/uploads/Team/JoniPajarinen/RLPO2018_paper_20.pdf](Explicit Sequence Proximity Models for Hidden State Identification)".
+This repository provides official code base for our [NeurIPS](https://nips.cc/) paper "[Explicit Sequence Proximity Models for Hidden State Identification](https://www.ias.informatik.tu-darmstadt.de/uploads/Team/JoniPajarinen/RLPO2018_paper_20.pdf)".
 
 ## Recommended Systems
 * Ubuntu 16.04
